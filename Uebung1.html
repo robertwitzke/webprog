@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dies ist der Titel der Seite</title>
+  </head>
+  <body>
+    <h1>Überschrift 1</h1>
+    <h2>Überschrift 2</h2>
+    <img
+      width="300"
+      src="https://www.planet-wissen.de/natur/weltall/sonne/sonnenahwdrdpagjpg100~_v-ARDFotogalerie.jpg"
+    />
+    <p>Willkommen auf meiner Seite</p>
+    <ol>
+      <li>Trage den <i>Namen der Stadt</i> ein</li>
+      <li>W&auml;hle aus <u>welche</u> Daten dir angezeigt werden sollen</li>
+      <li>W&auml;hle eine <b>Farbe</b> (optional)</li>
+    </ol>
+    <p>Wenn du nicht wei&szlig;t...</p>
+    <hr />
+    <form>
+      <fieldset>
+        <legend>Lokales</legend>
+        <label for="city">Stadt: </label>
+        <input type="text" id="city" />
+        <label for="timezone">Ortszeit: </label>
+        <input type="checkbox" id="timezone" />
+      </fieldset>
+      <fieldset>
+        <legend>Einheiten</legend>
+        <label for="fahrenheit">Fahrenheit: </label>
+        <input type="radio" name="unit" id="fahrenheit" />
+        <label for="celsius">Celsius: </label>
+        <input type="radio" name="unit" id="celsius" />
+      </fieldset>
+      <fieldset>
+        <legend>Optionen</legend>
+        <label for="color">Farbe: </label>
+        <select id="color">
+          <option value="null"></option>
+          <option value="red">rot</option>
+          <option value="yellow">gelb</option>
+          <option value="blue">blau</option>
+        </select>
+      </fieldset>
+      <button type="reset">Reset</button>
+      <button type="submit">Submit</button>
+    </form>
+    <hr />
+    <table border="1">
+      <tr>
+        <th>Stadt</th>
+        <th>Land</th>
+        <th>Fluss</th>
+      </tr>
+      <tr>
+        <td>s</td>
+        <td>s</td>
+        <td>s</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+  </body>
+</html>
