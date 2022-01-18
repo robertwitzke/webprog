@@ -1,0 +1,26 @@
+.flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap:  3;
+}
+
+.flex-container > h1 {
+        margin:  10px;
+}
+
+.flex-container > a {
+        margin:  20px;
+}
+
+.header {
+        background-color:  rgba(255, 255, 255, 0.1);
+        border:  1px solid lightgray;
+}
+
+.content {
+        background-color:  rgba(255, 255, 255, 0.1);
+}
+
+.footer {
+        color:  white;
+}
