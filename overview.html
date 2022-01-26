@@ -8,17 +8,17 @@
         <link rel="stylesheet" href="css/style.css"/>
         <title>Reisebüro</title>
     </head>
-    <body style="background-image:url(https://images5.alphacoders.com/372/thumb-1920-372649.jpg); background-size: cover;">
+    <body id="overview-body">
         
         <div class="header flex-container">
-            <h1 style="color: white;">Reisebüro Gruppe B5</h1>
+            <h1>Reisebüro Gruppe B5</h1>
             <a href="index.html"><button>Ausloggen</button></a>
         </div>
 
         <div class="content">
-            <h2 style="color: white">Informationen</h2>
-            <center>
-                <table border="1" style="color: white">
+            <h2>Informationen</h2>
+            <div id="overview-information">
+                <table border="1">
                     <thead>
                         <tr>
                             <th></th>
@@ -29,28 +29,28 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a style="color: white;" href="#Barcelona"><i>Barcelona</i></a></td>
+                            <td><a class="a-info" href="#Barcelona"><i>Barcelona</i></a></td>
                             <td>ab 98,00€</td>
                             <td>ab 30,00€</td>
                             <td>UTC+1</td>
                         </tr>
                         <tr>
-                            <td><a style="color: white;" href="#New_York"><i>New York</i></a></td>
+                            <td><a class="a-info" href="#New_York"><i>New York</i></a></td>
                             <td>ab 328,00€</td>
                             <td>ab 60,00€</td>
                             <td>UTC-5</td>
                         </tr>
                         <tr>
-                            <td><a style="color: white;" href="#Tokio"><i>Tokio</i></a></td>
+                            <td><a class="a-info" href="#Tokio"><i>Tokio</i></a></td>
                             <td>ab 590,00€</td>
                             <td>ab 20,00€</td>
                             <td>UTC+9</td>
                         </tr>
                     </tbody>
                 </table>
-            </center>
+            </div>
             <hr>
-            <div style="background-color: rgba(0, 0, 0, 0.5);color: white">
+            <div class="overview-destination">
                 <h3 id="Barcelona">Barcelona</h3>
                 <p>Entdecken Sie die <b>wunderschöne</b> Altstadt im Stadtkern Barcelonas!<br>Die Stadt ist <u>Blickpunkt</u> neuer Tendenzen der <i>Kultur</i>, <i>Mode</i> und <i>Gastro-Szene</i>.</p>
                 <img src="img/Barcelona.jpg" alt="Barcelona" width="400"/>
@@ -62,16 +62,16 @@
                 </ol>
                 <h4>Sehenswürdigkeiten</h4>
                 <ul>
-                    <li><a style="color: lightgray;" href="https://go2barcelona.de/sagrada-familia.html">Sagrada Familia</a></li>
-                    <li><a style="color: lightgray;" href="https://go2barcelona.de/park-guell.html">Park Guell</a></li>
-                    <li><a style="color: lightgray;" href="https://go2barcelona.de/camp-nou.html">Camp Nou Stadion</a></li>
+                    <li><a class="a-sight" href="https://go2barcelona.de/sagrada-familia.html">Sagrada Familia</a></li>
+                    <li><a class="a-sight" href="https://go2barcelona.de/park-guell.html">Park Guell</a></li>
+                    <li><a class="a-sight" href="https://go2barcelona.de/camp-nou.html">Camp Nou Stadion</a></li>
                 </ul>
                 <form action="https://www.trivago.de/barcelona-31965/hotel">
                     <input type="submit" value="Jetzt Buchen" />
                 </form>
             </div>
             <hr>
-            <div style="background-color: rgba(0, 0, 0, 0.5);color: white">
+            <div class="overview-destination">
                 <h3 id="New_York">New York</h3>
                 <p>Erleben Sie <b>Superlativen</b> bei einer New York-Reise!<br>
                 Sie können jederzeit etwas interessantes entdecken.<br>
@@ -86,16 +86,16 @@
                 </ol>
                 <h4>Sehenswürdigkeiten</h4>
                 <ul>
-                    <li><a style="color: lightgray;" href="https://www.newyorkcity.de/times-square-in-new-york/">Times Square</a></li>
-                    <li><a style="color: lightgray;" href="https://www.usatipps.de/bundesstaaten/mittelatlantik/new-york/new-york-city/empire-state-building/">Empire State Building</a></li>
-                    <li><a style="color: lightgray;" href="https://www.newyorkcity.de/central-park-in-new-york/">Central Park</a></li>
+                    <li><a class="a-sight" href="https://www.newyorkcity.de/times-square-in-new-york/">Times Square</a></li>
+                    <li><a class="a-sight" href="https://www.usatipps.de/bundesstaaten/mittelatlantik/new-york/new-york-city/empire-state-building/">Empire State Building</a></li>
+                    <li><a class="a-sight" href="https://www.newyorkcity.de/central-park-in-new-york/">Central Park</a></li>
                 </ul>
                 <form action="https://www.trivago.de/new-york-34812/hotel">
                     <input type="submit" value="Jetzt Buchen" />
                 </form>
             </div>
             <hr>
-            <div style="background-color: rgba(0, 0, 0, 0.5);color: white">
+            <div class="overview-destination">
                 <h3 id="Tokio">Tokio</h3>
                 <p>Verrückte Kleidung, bunte Cosplayer, schrille Neonreklamen<br>
                 und ein chaotisches, aber ruhiges Miteinander!<br>
@@ -111,9 +111,9 @@
                 </ol>
                 <h4>Sehenswürdigkeiten</h4>
                 <ul>
-                    <li><a style="color: lightgray;" href="https://www.tokyo-skytree.jp/en/">Tokyo Skytree</a></li>
-                    <li><a style="color: lightgray;" href="https://www.japan.travel/de/spot/371/">Regenbogenbrücke</a></li>
-                    <li><a style="color: lightgray;" href="https://www.urlaubsguru.de/reisemagazin/sehenswuerdigkeiten-tokio/#tempel">Sensō-ji Tempel</a></li>
+                    <li><a class="a-sight" href="https://www.tokyo-skytree.jp/en/">Tokyo Skytree</a></li>
+                    <li><a class="a-sight" href="https://www.japan.travel/de/spot/371/">Regenbogenbrücke</a></li>
+                    <li><a class="a-sight" href="https://www.urlaubsguru.de/reisemagazin/sehenswuerdigkeiten-tokio/#tempel">Sensō-ji Tempel</a></li>
                 </ul>
                 <form action="https://www.trivago.de/tokio-91304/hotel">
                     <input type="submit" value="Jetzt Buchen" />
