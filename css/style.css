@@ -1,78 +1,57 @@
-.flex-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap:  3;
+.bodyContainer {
+  background-image: url(https://images5.alphacoders.com/372/thumb-1920-372649.jpg);
+  background-size: cover;
 }
 
-.flex-container > h1 {
-        margin:  10px;
-        color: white;
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  flex-direction: row;
+  flex-flow: row wrap;
+  flex-wrap: 3;
 }
 
-.flex-container > a {
-        margin:  20px;
+h2 {
+  display: grid;
+  justify-content: center;
+  color: white;
 }
 
-.header {
-        background-color:  rgba(255, 255, 255, 0.1);
-        border:  1px solid lightgray;
+.citiesContainer {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 10px 10px;
 }
 
-.content {
-        background-color:  rgba(255, 255, 255, 0.1);
+@media only screen and (max-width: 600px) {
+  .citiesContainer {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px 10px;
+  }
+  header {
+    display: flex;
+    padding: 10px;
+    flex-flow: row wrap;
+  }
+  h1 {
+    font-size: x-large;
+  }
+  #button {
+    justify-content: end;
+  }
 }
 
-.content > h2 {
-        color: white;
+.cities {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: grid;
+  align-content: space-between;
 }
 
-.footer {
-        color:  white;
-}
-
-#index-body {
-        background-image: url(https://images5.alphacoders.com/372/thumb-1920-372649.jpg); 
-        background-size: auto;
-        color: white;
-}
-
-#index-body > h2 {
-        color: white;
-}
-
-#index-body > form {
-        margin-top:  50px; 
-        margin-bottom:  50px;
-}
-
-.overview-destination {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-}
-
-#overview-body {
-        background-image: url(https://images5.alphacoders.com/372/thumb-1920-372649.jpg);
-        background-size: cover;
-}
-
-#overview-body > h1 {
-        color: white;
-}
-
-#overview-information {
-        text-align: center;
-}
-
-#overview-information > table {
-        color: white;
-        margin-left: auto;
-        margin-right: auto;
-}
-
-.a-info {
-        color: white;
-}
-
-.a-sight {
-        color:  lightgray;
+img {
+  position: relative;
+  width: 90%;
 }

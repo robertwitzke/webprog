@@ -1,45 +1,59 @@
 <!-- DISCLAIMER: Alle Inhalte dieser Webseite wurden jeweils gemeinsam vom gesamten Team erarbeitet. -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="css/style.css"/>
-        <title>Reisebüro</title>
-    </head>
-    <body id="index-body">
-        
-        <div class="header flex-container">
-            <h1>Reisebüro Gruppe B5</h1>    
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Reisebüro</title>
+  </head>
+  <body
+    style="
+      background-image: url(https://images5.alphacoders.com/372/thumb-1920-372649.jpg);
+      background-size: cover;
+    "
+  >
+    <header>
+      <h1 style="color: white;">Reisebüro Gruppe B5</h1>
+    </header>
+    <h2 style="color: white;">Anmeldung</h2>
+    <form style="margin-top: 50px; margin-bottom: 50px;" action="overview.html">
+      <div class="container">
+        <label for="uname">
+          <b style="color: white;">Benutzername:</b>
+        </label>
+        <input type="text" placeholder="Enter Username" name="uname" required />
 
-        <h2>Anmeldung</h2>
-        <form action="overview.html">
-            <div class="container">
-                <label for="uname">
-                    <b>Benutzername:</b>
-                </label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-                <label for="psw">
-                    <b>Passwort:</b>
-                </label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                <br>
-            </div>
-            <div class="container">
-                <button type="submit">Login</button>
-                <button type="button" class="cancelbtn">Abbrechen</button>
-                <br>
-                <span class="psw">
-                    <a href="https://youtu.be/dQw4w9WgXcQ">Passwort vergessen?</a>
-                </span>
-            </div>
-        </form>
-        <hr>
-        <div class="footer">
-            <p><b>Erstellt von Nico Leon Laschner, Robert Witzke, Marten Kaffler, Dennis Podkolsin, Mohammad Hamid Omar und Marcus Koppelmann</b> (Gruppe B5)</p>
-            <a href="https://github.com/robertwitzke/webprog">GitHub-Repository</a>
-        </div>
-    </body>
+        <label for="psw">
+          <b style="color: white;">Passwort:</b>
+        </label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+        <br />
+      </div>
+      <div class="container">
+        <button type="submit">Login</button>
+        <button type="button" class="cancelbtn">Abbrechen</button>
+        <br />
+        <span class="psw">
+          <a href="https://youtu.be/dQw4w9WgXcQ">Passwort vergessen?</a>
+        </span>
+      </div>
+    </form>
+    <hr />
+    <footer style="color: white;">
+      <p>
+        <b
+          >Erstellt von Nico Leon Laschner, Robert Witzke, Marten Kaffler,
+          Dennis Podkolsin, Mohammad Hamid Omar und Marcus Koppelmann</b
+        >
+        (Gruppe B5)
+      </p>
+      <a href="https://github.com/robertwitzke/webprog">GitHub-Repository</a>
+    </footer>
+  </body>
 </html>
