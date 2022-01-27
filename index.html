@@ -6,53 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Reisebüro</title>
+    <link rel="stylesheet" href="css/login.css" type="text/css"/>
   </head>
-  <body
-    style="
-      background-image: url(https://images5.alphacoders.com/372/thumb-1920-372649.jpg);
-      background-size: cover;
-    "
-  >
+  <body class="login-body">
     <header>
-      <h1 style="color: white;">Reisebüro Gruppe B5</h1>
+      <h1>Reisebüro Gruppe B5</h1>
     </header>
-    <h2 style="color: white;">Anmeldung</h2>
-    <form style="margin-top: 50px; margin-bottom: 50px;" action="overview.html">
-      <div class="container">
+    <h2>Anmeldung</h2>
+    <form class="login-form" action="overview.html">
+      <div>
         <label for="uname">
-          <b style="color: white;">Benutzername:</b>
+          <b>Benutzername:</b>
         </label>
-        <input type="text" placeholder="Enter Username" name="uname" required />
-
+        <input type="text" placeholder="Enter Username" id="uname" required />
         <label for="psw">
-          <b style="color: white;">Passwort:</b>
+          <b>Passwort:</b>
         </label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          name="psw"
-          required
-        />
-        <br />
+        <input type="password" placeholder="Enter Password" id="psw" required/>
+        <br/>
       </div>
       <div class="container">
         <button type="submit">Login</button>
         <button type="button" class="cancelbtn">Abbrechen</button>
-        <br />
+        <br/>
         <span class="psw">
           <a href="https://youtu.be/dQw4w9WgXcQ">Passwort vergessen?</a>
         </span>
       </div>
     </form>
-    <hr />
-    <footer style="color: white;">
-      <p>
-        <b
-          >Erstellt von Nico Leon Laschner, Robert Witzke, Marten Kaffler,
-          Dennis Podkolsin, Mohammad Hamid Omar und Marcus Koppelmann</b
-        >
-        (Gruppe B5)
-      </p>
+    <footer>
+      <hr/>
+      <p><b>Erstellt von Nico Leon Laschner, Robert Witzke, Marten Kaffler, Dennis Podkolsin, Mohammad Hamid Omar und Marcus Koppelmann</b> (Gruppe B5)</p>
       <a href="https://github.com/robertwitzke/webprog">GitHub-Repository</a>
     </footer>
   </body>

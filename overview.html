@@ -1,4 +1,4 @@
-<!-- DISCLAIMER: Alle Inhalte dieser Webseite wurden jeweils gemeinsam vom gesamten Team erarbeitet. -->
+<!-- DISCLAIMER: Diese Webseite wurde gemeinsam vom gesamten Team erarbeitet. -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,21 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Reisebüro</title>
-    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/overview.css" type="text/css"/>
   </head>
-  <body class="bodyContainer">
-    
+  <body>
     <header>
-      <h1 style="margin-top: 0; color: white;" id="title">Reisebüro Gruppe B5</h1>
-      <a style="color: white;" href="https://de.wikipedia.org/wiki/Barcelona">Startseite</a>
-      <a style="color: white;" href="https://de.wikipedia.org/wiki/Barcelona">Buchungskatalog</a>
-      <a style="color: white;" href="https://de.wikipedia.org/wiki/Barcelona">Kundendatenbank nach DSGVO</a>
-      <a style="color: white;" href="index.html">Ausloggen</a>
+      <h1 id="title">Reisebüro Gruppe B5</h1>
+      <a href="https://de.wikipedia.org/wiki/Barcelona"><b>Startseite</b></a>
+      <a href="https://de.wikipedia.org/wiki/Barcelona"><b>Buchungskatalog</b></a>
+      <a href="https://de.wikipedia.org/wiki/Barcelona"><b>Kundendatenbank nach DSGVO</b></a>
+      <a href="index.html"><b>Ausloggen</b></a>
     </header>
-    
     <h2>Informationen</h2>
-    <center>
-      <table border="1" style="color: white;">
+    <div id="information">
+      <table border="1">
         <thead>
           <tr>
             <th></th>
@@ -32,7 +30,7 @@
         <tbody>
           <tr>
             <td>
-              <a style="color: white;" href="#Barcelona"><i>Barcelona</i></a>
+              <a class="info-link" href="#Barcelona"><i>Barcelona</i></a>
             </td>
             <td>ab 98,00€</td>
             <td>ab 30,00€</td>
@@ -40,7 +38,7 @@
           </tr>
           <tr>
             <td>
-              <a style="color: white;" href="#New_York"><i>New York</i></a>
+              <a class="info-link" href="#New_York"><i>New York</i></a>
             </td>
             <td>ab 328,00€</td>
             <td>ab 60,00€</td>
@@ -48,7 +46,7 @@
           </tr>
           <tr>
             <td>
-              <a style="color: white;" href="#Tokio"><i>Tokio</i></a>
+              <a class="info-link" href="#Tokio"><i>Tokio</i></a>
             </td>
             <td>ab 590,00€</td>
             <td>ab 20,00€</td>
@@ -56,7 +54,7 @@
           </tr>
           <tr>
             <td>
-              <a style="color: white;" href="#Kapstadt"><i>Kapstadt</i></a>
+              <a class="info-link" href="#Kapstadt"><i>Kapstadt</i></a>
             </td>
             <td>ab 525,00€</td>
             <td>ab 43,00€</td>
@@ -64,18 +62,15 @@
           </tr>
         </tbody>
       </table>
-    </center>
-    <hr />
-    <div class="citiesContainer">
-      <div class="cities">
+    </div>
+    <hr/>
+    <div class="cityContainer">
+      <div class="city">
         <div>
           <h3 id="Barcelona">Barcelona</h3>
-          <p>
-            Entdecken Sie die <b>wunderschöne</b> Altstadt im Stadtkern
-            Barcelonas!<br />
-            Die Stadt ist <u>Blickpunkt</u> neuer Tendenzen der <i>Kultur</i>,
-            <i>Mode</i> und <i>Gastro-Szene</i>.
-          </p>
+          <p>Entdecken Sie die <b>wunderschöne</b> Altstadt im Stadtkern Barcelonas!<br />
+          Die Stadt ist <u>Blickpunkt</u> neuer Tendenzen der <i>Kultur</i>,
+          <i>Mode</i> und <i>Gastro-Szene</i>.</p>
         </div>
         <div>
           <img src="img/Barcelona.jpg" alt="Barcelona" width="400" />
@@ -90,25 +85,13 @@
           <h4>Sehenswürdigkeiten</h4>
           <ul>
             <li>
-              <a
-                style="color: lightgray;"
-                href="https://go2barcelona.de/sagrada-familia.html"
-                >Sagrada Familia</a
-              >
+              <a class="city-link" href="https://go2barcelona.de/sagrada-familia.html">Sagrada Familia</a>
             </li>
             <li>
-              <a
-                style="color: lightgray;"
-                href="https://go2barcelona.de/park-guell.html"
-                >Park Guell</a
-              >
+              <a class="city-link" href="https://go2barcelona.de/park-guell.html">Park Guell</a>
             </li>
             <li>
-              <a
-                style="color: lightgray;"
-                href="https://go2barcelona.de/camp-nou.html"
-                >Camp Nou Stadion</a
-              >
+              <a class="city-link" href="https://go2barcelona.de/camp-nou.html">Camp Nou Stadion</a>
             </li>
           </ul>
           <form action="https://www.trivago.de/barcelona-31965/hotel">
@@ -116,14 +99,12 @@
           </form>
         </div>
       </div>
-      <div class="cities">
+      <div class="city">
         <h3 id="New_York">New York</h3>
-        <p>
-          Erleben Sie <b>Superlativen</b> bei einer New York-Reise!<br />
-          Sie können jederzeit etwas interessantes entdecken.<br />
-          Lassen Sie sich von den Wolkenkratzern faszinieren<br />
-          und genießen Sie eine Tasse Kaffee im Central Park!
-        </p>
+        <p>Erleben Sie <b>Superlativen</b> bei einer New York-Reise!<br />
+        Sie können jederzeit etwas interessantes entdecken.<br />
+        Lassen Sie sich von den Wolkenkratzern faszinieren<br />
+        und genießen Sie eine Tasse Kaffee im Central Park!</p>
         <img src="img/New_York.jpg" alt="Barcelona" width="400" />
         <h4>Besonderheiten</h4>
         <ol>
@@ -134,40 +115,27 @@
         <h4>Sehenswürdigkeiten</h4>
         <ul>
           <li>
-            <a
-              style="color: lightgray;"
-              href="https://www.newyorkcity.de/times-square-in-new-york/"
-              >Times Square</a
-            >
+            <a class="city-link" href="https://www.newyorkcity.de/times-square-in-new-york/">Times Square</a>
           </li>
           <li>
-            <a
-              style="color: lightgray;"
-              href="https://www.usatipps.de/bundesstaaten/mittelatlantik/new-york/new-york-city/empire-state-building/">Empire Building</a>
+            <a class="city-link" href="https://www.usatipps.de/bundesstaaten/mittelatlantik/new-york/new-york-city/empire-state-building/">Empire Building</a>
           </li>
           <li>
-            <a
-              style="color: lightgray;"
-              href="https://www.newyorkcity.de/central-park-in-new-york/"
-              >Central Park</a
-            >
+            <a class="city-link" href="https://www.newyorkcity.de/central-park-in-new-york/">Central Park</a>
           </li>
         </ul>
         <form action="https://www.trivago.de/new-york-34812/hotel">
           <input type="submit" value="Jetzt Buchen" />
         </form>
       </div>
-
-      <div class="cities">
+      <div class="city">
         <h3 id="Tokio">Tokio</h3>
-        <p>
-          Verrückte Kleidung, bunte Cosplayer, schrille Neonreklamen<br />
-          und ein chaotisches, aber ruhiges Miteinander!<br />
-          Viertel wie Roppongi, Harajuku, Shibuya oder Ginza sind touristisch<br />
-          allseits bekannt und viel besprochen. Tokio ist die
-          bevölkerungsreichste<br />
-          Stadt der Welt.
-        </p>
+        <p>Verrückte Kleidung, bunte Cosplayer, schrille Neonreklamen<br />
+        und ein chaotisches, aber ruhiges Miteinander!<br />
+        Viertel wie Roppongi, Harajuku, Shibuya oder Ginza sind touristisch<br />
+        allseits bekannt und viel besprochen. Tokio ist die
+        bevölkerungsreichste<br />
+        Stadt der Welt.</p>
         <img src="img/Tokio.jpg" alt="Barcelona" width="400" />
         <h4>Besonderheiten</h4>
         <ol>
@@ -178,35 +146,24 @@
         <h4>Sehenswürdigkeiten</h4>
         <ul>
           <li>
-            <a style="color: lightgray;" href="https://www.tokyo-skytree.jp/en/"
-              >Tokyo Skytree</a
-            >
+            <a class="city-link" href="https://www.tokyo-skytree.jp/en/">Tokyo Skytree</a>
           </li>
           <li>
-            <a
-              style="color: lightgray;"
-              href="https://www.japan.travel/de/spot/371/"
-              >Regenbogenbrücke</a
-            >
+            <a class="city-link" href="https://www.japan.travel/de/spot/371/">Regenbogenbrücke</a>
           </li>
           <li>
-            <a
-              style="color: lightgray;"
-              href="https://www.urlaubsguru.de/reisemagazin/sehenswuerdigkeiten-tokio/#tempel"
-              >Sensō-ji Tempel</a
-            >
+            <a class="city-link" href="https://www.urlaubsguru.de/reisemagazin/sehenswuerdigkeiten-tokio/#tempel">Sensō-ji Tempel
+            </a>
           </li>
         </ul>
         <form action="https://www.trivago.de/tokio-91304/hotel">
           <input type="submit" value="Jetzt Buchen" />
         </form>
       </div>
-      <div class="cities">
+      <div class="city">
         <div>
           <h3 id="Kapstadt">Kapstadt</h3>
-          <p>
-            Die <b>Symbiose</b> aus Großstadtflair, der <i>bezaubernden</i> Lage am Ozean, der interessanten Geschichte und dem schönen, sowie abwechslungsreichen Hinterland gefällt <u>jedem</u> Besucher dieser Metropole!
-          </p>
+          <p> Die <b>Symbiose</b> aus Großstadtflair, der <i>bezaubernden</i> Lage am Ozean, der interessanten Geschichte und dem schönen, sowie abwechslungsreichen Hinterland gefällt <u>jedem</u> Besucher dieser Metropole!</p>
         </div>
         <div>
           <img src="img/Kapstadt.jpg" alt="Kapstadt" width="400" />
@@ -221,13 +178,13 @@
           <h4>Sehenswürdigkeiten</h4>
           <ul>
             <li>
-              <a style="color: lightgray;" href="https://de.wikipedia.org/wiki/Tafelberg">Tafelberg</a>
+              <a class="city-link" href="https://de.wikipedia.org/wiki/Tafelberg">Tafelberg</a>
             </li>
             <li>
-              <a style="color: lightgray;" href="https://de.wikipedia.org/wiki/Botanischer_Garten_Kirstenbosch">Botanischer Garten Kirstenbosch</a>
+              <a class="city-link" href="https://de.wikipedia.org/wiki/Botanischer_Garten_Kirstenbosch">Botanischer Garten Kirstenbosch</a>
             </li>
             <li>
-              <a style="color: lightgray;" href="https://www.kapstadt-entdecken.de/kap-der-guten-hoffnung/">Kap der guten Hoffnung</a>
+              <a class="city-link" href="https://www.kapstadt-entdecken.de/kap-der-guten-hoffnung/">Kap der guten Hoffnung</a>
             </li>
           </ul>
           <form action="https://www.trivago.de/kapstadt-50652/hotel">
@@ -235,26 +192,20 @@
           </form>
         </div>
       </div>
-      <div class="cities">
-        <div style="width: 100%; height: 100%; text-align: center; margin-top: 60%; font-size: 45px;">
+      <div class="city">
+        <div class="placeholder">
             <p><b><u>Coming Soon!</u></b></p>
         </div>
       </div>
-      <div class="cities">
-        <div style="width: 100%; height: 100%; text-align: center; margin-top: 60%; font-size: 45px;">
+      <div class="city">
+        <div class="placeholder">
             <p><b><u>Coming Soon!</u></b></p>
         </div>
       </div>
     </div>
     <hr />
-    <footer style="color: white;">
-      <p>
-        <b
-          >Erstellt von Nico Leon Laschner, Robert Witzke, Marten Kaffler,
-          Dennis Podkolsin, Mohammad Hamid Omar und Marcus Koppelmann</b
-        >
-        (Gruppe B5)
-      </p>
+    <footer>
+      <p><b>Erstellt von Nico Leon Laschner, Robert Witzke, Marten Kaffler, Dennis Podkolsin, Mohammad Hamid Omar und Marcus Koppelmann</b> (Gruppe B5)</p>
       <a href="https://github.com/robertwitzke/webprog">GitHub-Repository</a>
     </footer>
   </body>

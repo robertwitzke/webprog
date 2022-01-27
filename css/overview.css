@@ -1,15 +1,49 @@
-.bodyContainer {
+body {
   background-image: url(https://images5.alphacoders.com/372/thumb-1920-372649.jpg);
   background-size: cover;
+}
+
+#title {
+  margin-top: 0;
+  color: white;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   flex-direction: row;
   flex-flow: row wrap;
   flex-wrap: 3;
+}
+
+header > a {
+  color: white;
+  margin-top: 10px;
+}
+
+#information {
+  text-align: center;
+}
+
+#information > table {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-link {
+  color: white;
+}
+
+.city-link {
+  color: lightgray;
+}
+
+.placeholder {
+  text-align: center;
+  margin-top: 50%;
+  margin-bottom: 50%;
+  font-size: 45px;
 }
 
 h2 {
@@ -18,14 +52,14 @@ h2 {
   color: white;
 }
 
-.citiesContainer {
+.cityContainer {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   gap: 10px 10px;
 }
 
 @media only screen and (max-width: 600px) {
-  .citiesContainer {
+  .cityContainer {
     display: grid;
     grid-template-columns: auto;
     gap: 10px 10px;
@@ -43,7 +77,7 @@ h2 {
   }
 }
 
-.cities {
+.city {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -54,4 +88,8 @@ h2 {
 img {
   position: relative;
   width: 90%;
+}
+
+footer {
+  color: white;
 }

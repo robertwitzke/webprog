@@ -1,0 +1,25 @@
+.login-body {
+    background-image: url(https://images5.alphacoders.com/372/thumb-1920-372649.jpg);
+    background-size: cover;
+}
+
+header {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+.login-form {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+b {
+    color: white;
+}
+
+footer {
+    color: white;
+}
