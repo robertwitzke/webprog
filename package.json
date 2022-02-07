@@ -1,4 +1,12 @@
 {
+  "name": "Reiseplattform",
+  "version": "1.0.0",
+  "description": "Reiseplattform on Docker",
+  "author": "Marten Kaffler, Nico Leon Laschner, Mohammad Hamid Omar, Marcus Koppelmann, Dennis Podkolsin, Robert Witzke",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "express": "^4.17.2"
   }
