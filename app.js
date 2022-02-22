@@ -31,13 +31,60 @@ app.post("/login", (req, res) => {
   res.send();
 });
 
+app.get("/logout", (req, res) => {
+  res.clearCookie("username");
+  res.clearCookie("favorites");
+  res.redirect("/showlogin");
+  res.send();
+});
+
 favorites = [];
 
+//Für Favoriten
+const data = {
+  Cassidy: [],
+  Bryn: [],
+  Kim: []
+};
+
+//Für Counter jeder Stadt in folgender Reihenfolge: Barcelona, New York, Tokio, Kapstadt
+const counter = {
+  Cassidy: [],
+  Bryn: [],
+  Kim: []
+}
+
 app.post("/favorit", (req, res) => {
-  favorites.push(req.body.barcelona)
-  res.cookie("favoriten", req.body.barcelona);
-  console.log(req.body.barcelona);
+  if(!(req.cookies.username in data)) {
+    data[req.cookies.username] = [];
+  }
+
+  if(!(data[req.cookies.username].includes(req.body.favorite_btn))) {
+    data[req.cookies.username].push(req.body.favorite_btn);
+  }
+
+  console.log(data);
+  res.cookie("favorites", favorites);
+  res.redirect("/home");
+  res.send();
 })
+
+function addListItem() {
+  fetch("/data")
+  .then((response) => response.json())
+  .then((liste) => {
+      liste.forEach((favorite) => {
+          const liste = document.getElementById("favorites_list");
+          var entry = document.createElement('li');
+          entry.innerHTML = favorite;
+          liste.appendChild(entry);
+      });
+  });
+};
+
+app.get("/data", (req, res) => {
+  res.json(data[req.cookies.username]);
+});
 
 app.get("/home", (req, res) => {
   if(req.cookies.username) {
@@ -46,6 +93,17 @@ app.get("/home", (req, res) => {
     res.redirect("/showlogin");
   }
 });
+
+app.post("/count", (req, res) => {
+  if(req.body.cityname == "Barcelona") {
+    console.log("Barcelona");
+  } else if(req.body.cityname == "New York") {
+    console.log("New York");
+  }
+  //Jetzt auf jeweilige Seite weiterleiten
+  res.redirect("/home");
+  res.send();
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
