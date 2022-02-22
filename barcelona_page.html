@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/overview.css" type="text/css"/>
+</head>
+<body>
+    
+    <header>
+        <h1 id="title">Reisebüro Gruppe B5</h1>
+        <a href="./overview.html"><b>Startseite</b></a>
+        <a href="https://de.wikipedia.org/wiki/Barcelona"><b>Buchungskatalog</b></a>
+        <a href="https://de.wikipedia.org/wiki/Barcelona"><b>Kundendatenbank nach DSGVO</b></a>
+        <a href="index.html"><b>Ausloggen</b></a>
+      </header>
+      <div class="singleCityContainer">
+        <div class="city">
+          <div>
+            <h3 id="Barcelona">Barcelona</h3>
+            <p>Entdecken Sie die <b>wunderschöne</b> Altstadt im Stadtkern Barcelonas!<br />
+            Die Stadt ist <u>Blickpunkt</u> neuer Tendenzen der <i>Kultur</i>,
+            <i>Mode</i> und <i>Gastro-Szene</i>.</p>
+          </div>
+          <div>
+            <img src="img/Barcelona.jpg" alt="Barcelona" width="400" />
+            <h4>Besonderheiten</h4>
+            <ol>
+              <li>Sonniges Wetter mit Strand</li>
+              <li>Zahlreiche Shopping- und Bademöglichkeiten</li>
+              <li>Idyllische Bars und Restaurants</li>
+            </ol>
+          </div>
+          <div>
+            <h4>Sehenswürdigkeiten</h4>
+            <ul>
+              <li>
+                <a class="city-link" href="https://go2barcelona.de/sagrada-familia.html">Sagrada Familia</a>
+              </li>
+              <li>
+                <a class="city-link" href="https://go2barcelona.de/park-guell.html">Park Guell</a>
+              </li>
+              <li>
+                <a class="city-link" href="https://go2barcelona.de/camp-nou.html">Camp Nou Stadion</a>
+              </li>
+            </ul>
+            <form action="https://www.trivago.de/barcelona-31965/hotel">
+              <input type="submit" value="Jetzt Buchen" />
+            </form>
+            <form action="/favorit" method="POST">
+                <button type="submit" value="Barcelona" id="barcelona" name="barcelona">Favorit</button>
+              </form>
+          </div>
+        </div>
+    </div>
+    <hr/>
+    <footer>
+      <p><b>Erstellt von Nico Leon Laschner, Robert Witzke, Marten Kaffler, Dennis Podkolsin, Mohammad Hamid Omar und Marcus Koppelmann</b> (Gruppe B5)</p>
+      <a href="https://github.com/robertwitzke/webprog">GitHub-Repository</a>
+    </footer>
+</body>
+</html>

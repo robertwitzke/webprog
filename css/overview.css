@@ -39,6 +39,11 @@ header > a {
   color: white;
 }
 
+.city-header {
+  color: white;
+  font-size: large;
+}
+
 .city-link {
   color: lightgray;
 }
@@ -60,6 +65,12 @@ h2 {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   gap: 10px 10px;
+}
+
+.singleCityContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
 }
 
 @media only screen and (max-width: 600px) {
