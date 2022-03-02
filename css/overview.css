@@ -103,6 +103,7 @@ h2 {
 .commentList {
   display: flex;
   flex-wrap: wrap;
+  padding: 10px;
 }
 
 .city {
