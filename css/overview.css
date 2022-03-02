@@ -79,6 +79,13 @@ h2 {
     grid-template-columns: auto;
     gap: 10px 10px;
   }
+
+  .singleCityContainer {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px 10px;
+  }
+
   header {
     display: flex;
     padding: 10px;
@@ -92,12 +99,25 @@ h2 {
   }
 }
 
+.commentList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .city {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   display: grid;
   align-content: space-between;
+}
+
+p {
+  line-break: anywhere;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  white-space: initial;
 }
 
 textarea#comments {

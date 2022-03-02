@@ -133,6 +133,20 @@
           addCounterListItem();
         </script>
       </div>
+      <div class="city">
+        <div id="comment_list">
+          <h3 id="Kommentare">Kommentare</h3>
+          <p>Berichte von deinen Erfahrungen aus Barcelona!</p>
+          <form action="/commentary" method="POST">
+            <textarea type="text" placeholder="Verfasse einen Kommentar..." maxlength="120" id="comments" name="comments"></textarea>
+            <button type="submit">Senden</button>
+          </form>
+          <!-- <ul id="comment_list" class="commentList"></ul> -->
+          <script>
+            addComment();
+          </script>
+        </div>
+      </div>
     </div>
     <hr />
     <footer>

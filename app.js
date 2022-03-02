@@ -53,8 +53,8 @@ const data = {
 //Für Counter jeder Stadt in folgender Reihenfolge: Barcelona, New York, Tokio, Kapstadt
 const counter = {
   Cassidy: [["Barcelona", 0], ["New York", 0], ["Tokio", 0], ["Kapstadt", 0]],
-  Bryn: [0, 0, 0, 0],
-  Kim: [0, 0, 0, 0]
+  Bryn: [["Barcelona", 0], ["New York", 0], ["Tokio", 0], ["Kapstadt", 0]],
+  Kim: [["Barcelona", 0], ["New York", 0], ["Tokio", 0], ["Kapstadt", 0]]
 }
 
 app.post("/favorit", (req, res) => {
@@ -135,18 +135,26 @@ const comments = {
 };
 
 app.post("/commentary", (req, res) => {
-  comments[req.cookies.username].push(req.body.value);
-  res.redirect("/home");
+  comments[req.cookies.username].push(req.body.comments);
+  res.redirect(req.get('referer'));
   res.send();
 });
 
-// function pushComment(username) {
-//   const commentInput = document.getElementById("comments").innerHTML;
-//   comments[username].push(commentInput);
-// }
-
 app.get("/commentsdata", (req, res) => {
-  res.json(comments[req.cookies.username]);
+  if(req.cookies.username === "Bryn") {
+    allComments = []
+    for (const [key, value] of Object.entries(comments)) {
+      value.forEach(element => {
+        allComments.push(element);
+      });
+    }
+    console.log(comments);
+    console.log(allComments);
+    res.json(allComments);
+
+  } else {
+    res.json(comments[req.cookies.username]);
+  }
 });
 
 function addComment() {
@@ -155,8 +163,8 @@ function addComment() {
   .then((liste) => {
     for (let i = 0; i < liste.length; i++) {
       const list = document.getElementById("comment_list");
-      var entry = document.createElement('li');
-      entry.innerHTML = liste[i];
+      var entry = document.createElement('p');
+      entry.innerHTML = "Anonym schreibt : " + liste[i];
       list.appendChild(entry);
     }
   });
