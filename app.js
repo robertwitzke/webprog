@@ -95,13 +95,15 @@ app.get("/home", (req, res) => {
 });
 
 app.post("/count", (req, res) => {
-  if(req.body.cityname == "Barcelona") {
+  if(req.body.cityname === "Barcelona") {
     console.log("Barcelona");
-  } else if(req.body.cityname == "New York") {
+    res.redirect("barcelona_page.html");
+  } else if(req.body.cityname === "New York") {
     console.log("New York");
+    res.redirect("newyork_page.html");
   }
   //Jetzt auf jeweilige Seite weiterleiten
-  res.redirect("/home");
+  //res.redirect("/home");
   res.send();
 })
 

@@ -5,11 +5,12 @@
   "author": "Marten Kaffler, Nico Leon Laschner, Mohammad Hamid Omar, Marcus Koppelmann, Dennis Podkolsin, Robert Witzke",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.2",
     "cookie-parser": "^1.4.6",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
   }
 }
