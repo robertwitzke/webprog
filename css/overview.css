@@ -100,6 +100,11 @@ h2 {
   align-content: space-between;
 }
 
+textarea#comments {
+  width: 95%;
+  height: 100px;
+}
+
 .listings {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);

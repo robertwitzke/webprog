@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/overview.css" type="text/css"/>
+    <script src="app.js"></script>
 </head>
 <body>
     
@@ -51,6 +52,20 @@
             <form action="/favorit" method="POST">
                 <button type="submit" value="Barcelona" id="favorite_btn" name="favorite_btn">Favorit</button>
             </form>
+          </div>
+        </div>
+        <div class="city">
+          <div>
+            <h3 id="Kommentare">Kommentare</h3>
+            <p>Berichte von deinen Erfahrungen aus Barcelona!</p>
+            <form action="/commentary" method="POST">
+              <textarea type="text" value="hallo" id="comments" name="comments">Verfasse einen Kommentar...</textarea>
+              <button type="submit">Senden</button>
+            </form>
+            <ul id="comment_list"></ul>
+            <script>
+              addComment();
+            </script>
           </div>
         </div>
     </div>

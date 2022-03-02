@@ -4,6 +4,9 @@ const { use } = require("express/lib/application");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fs = require("fs")
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+global.document = new JSDOM("barcelona_page.html").window.document;
 const port = 8080;
 
 app.use(cookieParser());
@@ -49,7 +52,7 @@ const data = {
 
 //Für Counter jeder Stadt in folgender Reihenfolge: Barcelona, New York, Tokio, Kapstadt
 const counter = {
-  Cassidy: [["Barcelona", 0], 0, 0, 0],
+  Cassidy: [["Barcelona", 0], ["New York", 0], ["Tokio", 0], ["Kapstadt", 0]],
   Bryn: [0, 0, 0, 0],
   Kim: [0, 0, 0, 0]
 }
@@ -83,14 +86,13 @@ function addListItem() {
 };
 
 function addCounterListItem() {
-  citynames = ["Barcelona", "New York", "Tokio", "Kapstadt"]
   fetch("/countdata")
   .then((response) => response.json())
   .then((liste) => {
     for (let i = 0; i < liste.length; i++) {
       const list = document.getElementById("most_list");
       var entry = document.createElement('li');
-      entry.innerHTML = citynames[i] + ", " + liste[i];
+      entry.innerHTML = "Die " + liste[i][0] + "-Seite wurde " + liste[i][1] + " Mal besucht.";
       list.appendChild(entry);
     }
   });
@@ -102,9 +104,17 @@ app.get("/data", (req, res) => {
 
 app.get("/countdata", (req, res) => {
   isEmpty = true;
-  visible_cities = []
+  visible_cities = [];
+  sum = 0;
+
   for (let i = 0; i < counter[req.cookies.username].length; i++) {
-    if(counter[req.cookies.username][i] !== 0) {
+    sum += counter[req.cookies.username][i][1];
+  }
+
+  average = sum / 4;
+
+  for (let i = 0; i < counter[req.cookies.username].length; i++) {
+    if(counter[req.cookies.username][i][1] >= average && counter[req.cookies.username][i][1] !== 0) {
       isEmpty = false;
       visible_cities.push(counter[req.cookies.username][i]);
     }
@@ -118,6 +128,40 @@ app.get("/countdata", (req, res) => {
 
 });
 
+const comments = {
+  Cassidy: [],
+  Bryn: [],
+  Kim: []
+};
+
+app.post("/commentary", (req, res) => {
+  comments[req.cookies.username].push(req.body.value);
+  res.redirect("/home");
+  res.send();
+});
+
+// function pushComment(username) {
+//   const commentInput = document.getElementById("comments").innerHTML;
+//   comments[username].push(commentInput);
+// }
+
+app.get("/commentsdata", (req, res) => {
+  res.json(comments[req.cookies.username]);
+});
+
+function addComment() {
+  fetch("/commentsdata")
+  .then((response) => response.json())
+  .then((liste) => {
+    for (let i = 0; i < liste.length; i++) {
+      const list = document.getElementById("comment_list");
+      var entry = document.createElement('li');
+      entry.innerHTML = liste[i];
+      list.appendChild(entry);
+    }
+  });
+};
+
 app.get("/home", (req, res) => {
   if(req.cookies.username) {
     res.sendFile(__dirname + "/overview.html");
@@ -128,19 +172,19 @@ app.get("/home", (req, res) => {
 
 app.post("/count", (req, res) => {
   if(req.body.cityname === "Barcelona") {
-    counter[req.cookies.username][0] += 1;
+    counter[req.cookies.username][0][1] += 1;
     console.log(counter);
     res.redirect("barcelona_page.html");
   } else if(req.body.cityname === "New York") {
-    counter[req.cookies.username][1] += 1;
+    counter[req.cookies.username][1][1] += 1;
     console.log(counter);
     res.redirect("newyork_page.html");
   } else if(req.body.cityname === "Tokio") {
-    counter[req.cookies.username][2] += 1;
+    counter[req.cookies.username][2][1] += 1;
     console.log(counter);
     res.redirect("tokio_page.html");
   } else if(req.body.cityname === "Kapstadt") {
-    counter[req.cookies.username][3] += 1;
+    counter[req.cookies.username][3][1] += 1;
     console.log(counter);
     res.redirect("kapstadt_page.html");
   }
