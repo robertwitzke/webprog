@@ -94,7 +94,10 @@
         <img src="img/New_York.jpg" alt="Barcelona" width="400" />
       </div>
       <div class="city">
-        <a class="city-header" href="./tokio_page.html" id="Tokio">Tokio</a>
+        <form action="/count" method="POST">
+          <button type="submit" value="Tokio" id="cityname" name="cityname">Tokio</button>
+        </form>
+        <!-- <a class="city-header" href="./tokio_page.html" id="Tokio">Tokio</a> -->
         <p>Verrückte Kleidung, bunte Cosplayer, schrille Neonreklamen<br />
         und ein chaotisches, aber ruhiges Miteinander!<br />
         Viertel wie Roppongi, Harajuku, Shibuya oder Ginza sind touristisch<br />
@@ -105,24 +108,30 @@
       </div>
       <div class="city">
         <div>
-          <a class="city-header" href="./kapstadt_page.html" id="Kapstadt">Kapstadt</a>
+          <form action="/count" method="POST">
+            <button type="submit" value="Kapstadt" id="cityname" name="cityname">Kapstadt</button>
+          </form>
+          <!-- <a class="city-header" href="./kapstadt_page.html" id="Kapstadt">Kapstadt</a> -->
           <p> Die <b>Symbiose</b> aus Großstadtflair, der <i>bezaubernden</i> Lage am Ozean, der interessanten Geschichte und dem schönen, sowie abwechslungsreichen Hinterland gefällt <u>jedem</u> Besucher dieser Metropole!</p>
         </div>
         <div>
           <img src="img/Kapstadt.jpg" alt="Kapstadt" width="400" />
         </div>
       </div>
-      <div class="favorites">
+      <div class="listings">
         <h2>Deine Favoriten</h2>
         <ol id="favorites_list"></ol>
       </div>
       <script>
         addListItem();
       </script>
-      <div class="city">
-        <div class="placeholder">
-            <p><b><u>Coming Soon!</u></b></p>
+        <div class="listings">
+          <h2>Deine meistbesuchten Inhalte</h2>
+          <ol id="most_list"></ol>
         </div>
+        <script>
+          addCounterListItem();
+        </script>
       </div>
     </div>
     <hr />

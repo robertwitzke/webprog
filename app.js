@@ -49,9 +49,9 @@ const data = {
 
 //Für Counter jeder Stadt in folgender Reihenfolge: Barcelona, New York, Tokio, Kapstadt
 const counter = {
-  Cassidy: [],
-  Bryn: [],
-  Kim: []
+  Cassidy: [["Barcelona", 0], 0, 0, 0],
+  Bryn: [0, 0, 0, 0],
+  Kim: [0, 0, 0, 0]
 }
 
 app.post("/favorit", (req, res) => {
@@ -82,8 +82,40 @@ function addListItem() {
   });
 };
 
+function addCounterListItem() {
+  citynames = ["Barcelona", "New York", "Tokio", "Kapstadt"]
+  fetch("/countdata")
+  .then((response) => response.json())
+  .then((liste) => {
+    for (let i = 0; i < liste.length; i++) {
+      const list = document.getElementById("most_list");
+      var entry = document.createElement('li');
+      entry.innerHTML = citynames[i] + ", " + liste[i];
+      list.appendChild(entry);
+    }
+  });
+};
+
 app.get("/data", (req, res) => {
   res.json(data[req.cookies.username]);
+});
+
+app.get("/countdata", (req, res) => {
+  isEmpty = true;
+  visible_cities = []
+  for (let i = 0; i < counter[req.cookies.username].length; i++) {
+    if(counter[req.cookies.username][i] !== 0) {
+      isEmpty = false;
+      visible_cities.push(counter[req.cookies.username][i]);
+    }
+  }
+
+  if(!isEmpty) {
+    res.json(visible_cities);
+  } else {
+    res.json([]);
+  }
+
 });
 
 app.get("/home", (req, res) => {
@@ -96,11 +128,21 @@ app.get("/home", (req, res) => {
 
 app.post("/count", (req, res) => {
   if(req.body.cityname === "Barcelona") {
-    console.log("Barcelona");
+    counter[req.cookies.username][0] += 1;
+    console.log(counter);
     res.redirect("barcelona_page.html");
   } else if(req.body.cityname === "New York") {
-    console.log("New York");
+    counter[req.cookies.username][1] += 1;
+    console.log(counter);
     res.redirect("newyork_page.html");
+  } else if(req.body.cityname === "Tokio") {
+    counter[req.cookies.username][2] += 1;
+    console.log(counter);
+    res.redirect("tokio_page.html");
+  } else if(req.body.cityname === "Kapstadt") {
+    counter[req.cookies.username][3] += 1;
+    console.log(counter);
+    res.redirect("kapstadt_page.html");
   }
   //Jetzt auf jeweilige Seite weiterleiten
   //res.redirect("/home");
