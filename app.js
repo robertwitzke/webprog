@@ -30,6 +30,9 @@ app.get("/showlogin", (req, res) => {
 
 app.post("/login", (req, res) => {
   res.cookie("username", req.body.username);
+  data[req.body.username] = [];
+  counter[req.body.username] = [["Barcelona", 0], ["New York", 0], ["Tokio", 0], ["Kapstadt", 0]];
+  comments[req.body.username] = [];
   res.redirect("/home");
   res.send();
 });
@@ -44,18 +47,10 @@ app.get("/logout", (req, res) => {
 favorites = [];
 
 //Für Favoriten
-const data = {
-  Cassidy: [],
-  Bryn: [],
-  Kim: []
-};
+const data = {};
 
 //Für Counter jeder Stadt in folgender Reihenfolge: Barcelona, New York, Tokio, Kapstadt
-const counter = {
-  Cassidy: [["Barcelona", 0], ["New York", 0], ["Tokio", 0], ["Kapstadt", 0]],
-  Bryn: [["Barcelona", 0], ["New York", 0], ["Tokio", 0], ["Kapstadt", 0]],
-  Kim: [["Barcelona", 0], ["New York", 0], ["Tokio", 0], ["Kapstadt", 0]]
-}
+const counter = {};
 
 app.post("/favorit", (req, res) => {
   if(!(req.cookies.username in data)) {
@@ -64,6 +59,8 @@ app.post("/favorit", (req, res) => {
 
   if(!(data[req.cookies.username].includes(req.body.favorite_btn))) {
     data[req.cookies.username].push(req.body.favorite_btn);
+  } else {
+    data[req.cookies.username].splice(data[req.cookies.username].indexOf(req.body.favorite_btn), 1);
   }
 
   console.log(data);
@@ -71,32 +68,6 @@ app.post("/favorit", (req, res) => {
   res.redirect("/home");
   res.send();
 })
-
-function addListItem() {
-  fetch("/data")
-  .then((response) => response.json())
-  .then((liste) => {
-      liste.forEach((favorite) => {
-          const liste = document.getElementById("favorites_list");
-          var entry = document.createElement('li');
-          entry.innerHTML = favorite;
-          liste.appendChild(entry);
-      });
-  });
-};
-
-function addCounterListItem() {
-  fetch("/countdata")
-  .then((response) => response.json())
-  .then((liste) => {
-    for (let i = 0; i < liste.length; i++) {
-      const list = document.getElementById("most_list");
-      var entry = document.createElement('li');
-      entry.innerHTML = "Die " + liste[i][0] + "-Seite wurde " + liste[i][1] + " Mal besucht.";
-      list.appendChild(entry);
-    }
-  });
-};
 
 app.get("/data", (req, res) => {
   res.json(data[req.cookies.username]);
@@ -128,11 +99,7 @@ app.get("/countdata", (req, res) => {
 
 });
 
-const comments = {
-  Cassidy: [],
-  Bryn: [],
-  Kim: []
-};
+const comments = {};
 
 app.post("/commentary", (req, res) => {
   comments[req.cookies.username].push(req.body.comments);
@@ -141,33 +108,15 @@ app.post("/commentary", (req, res) => {
 });
 
 app.get("/commentsdata", (req, res) => {
-  if(req.cookies.username === "Bryn") {
-    allComments = []
-    for (const [key, value] of Object.entries(comments)) {
-      value.forEach(element => {
-        allComments.push(element);
-      });
-    }
-    
-    res.json(allComments);
-
-  } else {
-    res.json(comments[req.cookies.username]);
+  allComments = []
+  for (const [key, value] of Object.entries(comments)) {
+    value.forEach(element => {
+      allComments.push({ author: key, comment: element });
+    });
   }
+  
+  res.json(allComments);
 });
-
-function addComment() {
-  fetch("/commentsdata")
-  .then((response) => response.json())
-  .then((liste) => {
-    for (let i = 0; i < liste.length; i++) {
-      const list = document.getElementById("comment_list");
-      var entry = document.createElement('p');
-      entry.innerHTML = "Anonym schreibt : " + liste[i];
-      list.appendChild(entry);
-    }
-  });
-};
 
 app.get("/home", (req, res) => {
   if(req.cookies.username) {
