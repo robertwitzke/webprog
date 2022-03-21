@@ -64,8 +64,10 @@ h2 {
 .cityContainer {
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  gap: 10px 10px;
+  justify-content: space-between;
+  align-content: space-around;
   margin-bottom: 10px;
+  row-gap: 10px;
 }
 
 .singleCityContainer {
@@ -84,7 +86,6 @@ h2 {
   .singleCityContainer {
     display: grid;
     grid-template-columns: auto;
-    gap: 10px 10px;
   }
 
   header {
@@ -100,10 +101,14 @@ h2 {
   }
 }
 
-.commentList {
-  display: flex;
-  flex-wrap: wrap;
+
+#comment_list {
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
+  color: white;
+  align-content: space-between;
+
 }
 
 .city {
