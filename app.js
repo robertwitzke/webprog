@@ -148,8 +148,7 @@ app.get("/commentsdata", (req, res) => {
         allComments.push(element);
       });
     }
-    console.log(comments);
-    console.log(allComments);
+    
     res.json(allComments);
 
   } else {
@@ -181,23 +180,17 @@ app.get("/home", (req, res) => {
 app.post("/count", (req, res) => {
   if(req.body.cityname === "Barcelona") {
     counter[req.cookies.username][0][1] += 1;
-    console.log(counter);
     res.redirect("barcelona_page.html");
   } else if(req.body.cityname === "New York") {
     counter[req.cookies.username][1][1] += 1;
-    console.log(counter);
     res.redirect("newyork_page.html");
   } else if(req.body.cityname === "Tokio") {
     counter[req.cookies.username][2][1] += 1;
-    console.log(counter);
     res.redirect("tokio_page.html");
   } else if(req.body.cityname === "Kapstadt") {
     counter[req.cookies.username][3][1] += 1;
-    console.log(counter);
     res.redirect("kapstadt_page.html");
   }
-  //Jetzt auf jeweilige Seite weiterleiten
-  //res.redirect("/home");
   res.send();
 })
 
